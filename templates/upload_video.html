@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Upload</title>
+</head>
+<body>
+    <h1>Upload Video for Detection</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept="video/*">
+        <input type="submit" value="Upload and Process">
+    </form>
+    {% if result_video %}
+    <h2>Processed Video:</h2>
+    <img src="{{ result_video }}">
+    {% endif %}
+</body>
+</html>

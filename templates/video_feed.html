@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Real-Time Object Detection</title>
+    <style>
+        #video_feed {
+            width: 800px;
+            height: 600px;
+            border: 2px solid #4CAF50;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Live Object Detection Feed</h1>
+    <div>
+        <!-- Video streaming element [[3]][[7]] -->
+        <img id="video_feed" src="{{ url_for('video_feed') }}">
+    </div>
+    <p>Streaming MJPEG from webcam with YOLOv5 detections</p>
+</body>
+</html>
