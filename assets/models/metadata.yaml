@@ -1,0 +1,44 @@
+# Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
+
+description: "Fruit ripeness detection dataset containing 28 categories of various fruits at different ripeness stages"
+
+author: Ultralytics
+license: AGPL-3.0 https://ultralytics.com/license
+date: "2025-03-27T4:16:15.604065"
+version: 1.0
+stride: 32
+task: detect
+batch: 1
+input_shape: [1, 640, 640, 3]
+input_type: "float32" 
+mean: [0.0, 0.0, 0.0]
+std: [255.0, 255.0, 255.0]
+names:
+  0: empty_bunch_palm
+  1: overripe_palm
+  2: ripe_apple
+  3: ripe_banana
+  4: ripe_dragon
+  5: ripe_grapes
+  6: ripe_lemon
+  7: ripe_mango
+  8: ripe_orange
+  9: ripe_palm
+  10: ripe_papaya
+  11: ripe_pineapple
+  12: ripe_pomegranate
+  13: ripe_strawberry
+  14: rotten_palm
+  15: underripe_palm
+  16: unripe_apple
+  17: unripe_banana
+  18: unripe_dragon
+  19: unripe_grapes
+  20: unripe_lemon
+  21: unripe_mango
+  22: unripe_orange
+  23: unripe_palm
+  24: unripe_papaya
+  25: unripe_pineapple
+  26: unripe_pomegranate
+  27: unripe_strawberry
