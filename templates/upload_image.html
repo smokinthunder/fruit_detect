@@ -1,13 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Image Upload</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Detection | AI Vision</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 </head>
 <body>
-    <h1>Upload Image for Detection</h1>
-    <form method="POST" enctype="multipart/form-data">
-        <input type="file" name="file" accept="image/*">
-        <input type="submit" value="Upload and Process">
-    </form>
+    <div class="upload-container">
+        <div class="upload-header">
+            <i class="bi bi-image"></i>
+            <h1>Image Detection</h1>
+            <p>Upload an image for AI object detection analysis</p>
+        </div>
+
+        <div class="upload-card">
+            <form method="POST" enctype="multipart/form-data" class="upload-form">
+                <div class="file-upload">
+                    <label for="image-upload" class="upload-label">
+                        <i class="bi bi-cloud-arrow-up"></i>
+                        <span>Choose Image File</span>
+                        <input type="file" id="image-upload" name="file" accept="image/*" required>
+                    </label>
+                    <div class="file-info" id="file-info-image">No file selected</div>
+                </div>
+                <button type="submit" class="upload-button">
+                    <i class="bi bi-magic"></i>
+                    Process Image
+                </button>
+            </form>
+        </div>
+
+        {% if result_image %}
+        <div class="preview-section">
+            <h2><i class="bi bi-check-circle"></i> Processing Complete</h2>
+            <div class="preview-container">
+                <img src="{{ result_image }}" alt="Processed Image" class="processed-image">
+                <div class="preview-actions">
+                    <a href="/upload_image" class="action-button upload">
+                        <i class="bi bi-arrow-repeat"></i>
+                        Process Another
+                    </a>
+                    <a href="/" class="action-button home">
+                        <i class="bi bi-house-door"></i>
+                        Return Home
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+    <script>
+        document.getElementById('image-upload').addEventListener('change', function(e) {
+            const fileInfo = document.getElementById('file-info-image');
+            if (this.files.length > 0) {
+                fileInfo.textContent = this.files[0].name;
+            } else {
+                fileInfo.textContent = 'No file selected';
+            }
+        });
+    </script>
 </body>
 </html>

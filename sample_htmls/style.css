@@ -1,0 +1,118 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f7eab9, #fcdab6);
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background: #ff9800;
+  color: #fff;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1.2rem;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+main {
+  padding: 2rem 0;
+}
+
+.functionality {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.functionality h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #ff9800;
+}
+
+.upload-box {
+  position: relative;
+  display: inline-block;
+}
+
+.upload-label {
+  background: #ff9800;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.upload-label:hover {
+  background: #e68a00;
+}
+
+input[type="file"] {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.camera-btn {
+  background: #ff9800;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.camera-btn:hover {
+  background: #e68a00;
+}
+
+#live-camera {
+  margin-top: 1rem;
+  border: 2px solid #ff9800;
+  border-radius: 10px;
+  max-width: 100%;
+  height: auto;
+}
+
+footer {
+  background: #ff9800;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+
+footer p {
+  font-size: 0.9rem;
+}

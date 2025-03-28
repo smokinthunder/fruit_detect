@@ -18,7 +18,7 @@ try:
         source="local"
     )
     model.eval()
-    model.conf = 0.1  # Lower confidence threshold for more detections
+    model.conf = 0.4  # Lower confidence threshold for more detections
     model.iou = 0.45
 except Exception as e:
     print(f"Error loading model: {e}")
@@ -62,15 +62,21 @@ def gen_frames(source=0):
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index2.html')
 
-@app.route('/video_feed')
-def video_feed():
-    """Real-time webcam streaming"""
+@app.route('/camera')
+def camera():
     return Response(
         gen_frames(),
         mimetype='multipart/x-mixed-replace; boundary=frame'
     )
+
+@app.route('/video_feed')
+def video_feed():
+    """Real-time webcam streaming"""
+
+    return render_template('video_feed.html' )
+    
 
 @app.route('/upload_image', methods=['GET', 'POST'])
 def upload_image():
@@ -147,7 +153,9 @@ def upload_video():
                                b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
                 finally:
                     cap.release()
+    
             
+
             return Response(
                 generate_video_frames(),
                 mimetype='multipart/x-mixed-replace; boundary=frame'
@@ -156,6 +164,8 @@ def upload_video():
             return "Invalid file type.", 400
     return render_template('upload_video.html')
 
+
+
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
     if not allowed_file(filename):
@@ -163,4 +173,4 @@ def uploaded_file(filename):
     return send_from_directory('static/uploads', filename)
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=False)
+    app.run(host="0.0.0.0", port=5000, debug=True)

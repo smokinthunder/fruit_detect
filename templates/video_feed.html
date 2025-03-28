@@ -1,22 +1,90 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Real-Time Object Detection</title>
-    <style>
-        #video_feed {
-            width: 800px;
-            height: 600px;
-            border: 2px solid #4CAF50;
-            border-radius: 8px;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Detection | AI Vision</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 </head>
 <body>
-    <h1>Live Object Detection Feed</h1>
-    <div>
-        <!-- Video streaming element [[3]][[7]] -->
-        <img id="video_feed" src="{{ url_for('video_feed') }}">
+    <div class="live-container">
+        <header class="live-header">
+            <div class="header-content">
+                <i class="bi bi-camera-video"></i>
+                <h1>Real-Time Object Detection</h1>
+                <p class="subtitle">Live AI-powered object detection from your webcam</p>
+            </div>
+            <div class="detection-stats">
+                <span class="stat-item">
+                    <i class="bi bi-speedometer2"></i>
+                    <span>30 FPS</span>
+                </span>
+                <span class="stat-item">
+                    <i class="bi bi-bounding-box"></i>
+                    <span>Multiple Objects</span>
+                </span>
+                <span class="stat-item">
+                    <i class="bi bi-lightning-charge"></i>
+                    <span>YOLOv5</span>
+                </span>
+            </div>
+        </header>
+
+        <main class="live-content">
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <img id="video-feed" src="{{ url_for('camera') }}" alt="Live Detection Feed">
+                    <div class="processing-badge">
+                        <i class="bi bi-cpu"></i>
+                        <span>AI Processing</span>
+                    </div>
+                </div>
+                <div class="video-controls">
+                    <button class="control-button" id="fullscreen-btn">
+                        <i class="bi bi-fullscreen"></i>
+                    </button>
+                    <button class="control-button" id="snapshot-btn">
+                        <i class="bi bi-camera"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="/" class="action-button home">
+                    <i class="bi bi-house-door"></i>
+                    Return to Home
+                </a>
+                <a href="/upload_image" class="action-button upload">
+                    <i class="bi bi-image"></i>
+                    Image Detection
+                </a>
+                <a href="/upload_video" class="action-button video">
+                    <i class="bi bi-camera-reels"></i>
+                    Video Detection
+                </a>
+            </div>
+        </main>
     </div>
-    <p>Streaming MJPEG from webcam with YOLOv5 detections</p>
+
+    <script>
+        // Fullscreen functionality
+        document.getElementById('fullscreen-btn').addEventListener('click', function() {
+            const videoFeed = document.getElementById('video-feed');
+            if (videoFeed.requestFullscreen) {
+                videoFeed.requestFullscreen();
+            } else if (videoFeed.webkitRequestFullscreen) {
+                videoFeed.webkitRequestFullscreen();
+            } else if (videoFeed.msRequestFullscreen) {
+                videoFeed.msRequestFullscreen();
+            }
+        });
+
+        // Snapshot functionality
+        document.getElementById('snapshot-btn').addEventListener('click', function() {
+            // This would need backend implementation to save snapshots
+            alert('Snapshot functionality would be implemented here');
+        });
+    </script>
 </body>
 </html>
