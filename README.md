@@ -54,7 +54,7 @@ pip install -r requirements.txt
    pip install -r requirements.txt
    ```
 
-3. Place your custom YOLOv5 model weights (`best.pt`) in the root directory of the project.
+3. Place your custom YOLOv5 model weights (`best.pt`) in the root directory of the project. (Optional)
 
 4. Create the required directories:
    ```bash
@@ -65,6 +65,10 @@ pip install -r requirements.txt
 5. Run the Flask app:
    ```bash
    python app.py
+   ```
+   or
+   ```bash
+   flask run
    ```
 
 6. Open your browser and navigate to `http://127.0.0.1:5000`.

@@ -1,20 +1,45 @@
+# Base ------------------------------------------------------------------------
 flask
-requests
-black
-
-matplotlib>=3.2.2
-numpy>=1.18.5
-opencv-python>=4.1.2
-Pillow
+gitpython>=3.1.30
+matplotlib>=3.3  # Consolidated with matplotlib>=3.2.2
+numpy>=1.23.5    # Consolidated with numpy>=1.18.5
+opencv-python>=4.1.2  # Consolidated with opencv-python>=4.1.1
+pillow>=10.3.0   # Consolidated with Pillow
+psutil           # System resources (new addition)
 PyYAML>=5.3.1
+requests         # Consolidated with requests>=2.32.2
 scipy>=1.4.1
-torch>=1.7.0
-torchvision>=0.8.1
-tqdm>=4.41.0
+thop>=0.1.1      # FLOPs computation (new addition)
+torch>=1.8.0     # Consolidated with torch>=1.7.0
+torchvision>=0.9.0  # Consolidated with torchvision>=0.8.1
+tqdm>=4.66.3     # Consolidated with tqdm>=4.41.0
+ultralytics>=8.2.34  # New addition
 
+# Logging ---------------------------------------------------------------------
 tensorboard>=2.4.1
 
+# Plotting --------------------------------------------------------------------
+pandas          # Consolidated with pandas>=1.1.4
 seaborn>=0.11.0
-pandas
 
-thop  # FLOPs computation
+# Export ----------------------------------------------------------------------
+# coremltools>=6.0  # CoreML export
+# onnx>=1.10.0  # ONNX export
+# onnx-simplifier>=0.4.1  # ONNX simplifier
+# nvidia-pyindex  # TensorRT export
+# nvidia-tensorrt  # TensorRT export
+# scikit-learn<=1.1.2  # CoreML quantization
+# tensorflow>=2.4.0,<=2.13.1  # TF exports (-cpu, -aarch64, -macos)
+# tensorflowjs>=3.9.0  # TF.js export
+# openvino-dev>=2023.0  # OpenVINO export
+
+# Deploy ----------------------------------------------------------------------
+setuptools>=70.0.0  # Snyk vulnerability fix (new addition)
+# tritonclient[all]~=2.24.0
+
+# Extras ----------------------------------------------------------------------
+black            # Code formatting
+# ipython  # Interactive notebook
+# mss  # Screenshots
+# albumentations>=1.0.3
+# pycocotools>=2.0.6  # COCO mAP
