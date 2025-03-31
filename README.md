@@ -58,10 +58,6 @@ pip install -r requirements.txt
 
 2. Install the required dependencies:
 
-   ```bash
-   pip install -r requirements.txt
-   ```
-
    > (Recommended) Create and activate a virtual environment:
    >
    > ```bash
@@ -70,6 +66,10 @@ pip install -r requirements.txt
    > ```
    >
    > This ensures dependencies are installed in an isolated environment.
+
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 3. Place your custom YOLOv5 model weights (`best.pt`) in the root directory of the project. (Optional)
 
