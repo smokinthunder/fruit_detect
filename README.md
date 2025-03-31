@@ -5,6 +5,7 @@ This project uses the YOLOv5 object detection model to detect and classify the r
 ---
 
 ## **Table of Contents**
+
 1. [Features](#features)
 2. [Prerequisites](#prerequisites)
 3. [Installation](#installation)
@@ -16,6 +17,7 @@ This project uses the YOLOv5 object detection model to detect and classify the r
 ---
 
 ## **Features**
+
 - **Upload Image**: Detect fruit ripeness from an uploaded image.
 - **Upload Video**: Detect fruit ripeness from an uploaded video.
 - **Real-Time Webcam**: Use your device's camera for live object detection.
@@ -25,7 +27,9 @@ This project uses the YOLOv5 object detection model to detect and classify the r
 ---
 
 ## **Prerequisites**
+
 Before running the project, ensure you have the following installed:
+
 - Python 3.8 or higher
 - Flask (`pip install flask`)
 - PyTorch (`pip install torch torchvision`)
@@ -34,6 +38,7 @@ Before running the project, ensure you have the following installed:
 - Numpy (`pip install numpy`)
 
 Additionally, download the YOLOv5 repository and pre-trained weights:
+
 ```bash
 git clone https://github.com/ultralytics/yolov5.git
 cd yolov5
@@ -43,30 +48,46 @@ pip install -r requirements.txt
 ---
 
 ## **Installation**
+
 1. Clone this repository:
+
    ```bash
    git clone https://github.com/smokinthunder/fruit_detect.git
-   cd fruit-ripeness-detection
+   cd fruit-detect
    ```
 
 2. Install the required dependencies:
+
    ```bash
    pip install -r requirements.txt
    ```
 
+   > (Recommended) Create and activate a virtual environment:
+   >
+   > ```bash
+   > python -m venv venv
+   > source venv/bin/activate
+   > ```
+   >
+   > This ensures dependencies are installed in an isolated environment.
+
 3. Place your custom YOLOv5 model weights (`best.pt`) in the root directory of the project. (Optional)
 
 4. Create the required directories:
+
    ```bash
    mkdir static/uploads
    mkdir static/results
    ```
 
 5. Run the Flask app:
+
    ```bash
    python app.py
    ```
+
    or
+
    ```bash
    flask run
    ```
@@ -76,6 +97,7 @@ pip install -r requirements.txt
 ---
 
 ## **Project Structure**
+
 ```
 project/
 ├── app.py                  # Main Flask application
@@ -96,7 +118,9 @@ project/
 ---
 
 ## **Usage**
+
 ### **Home Page**
+
 - Access the home page at `http://127.0.0.1:5000`.
 - Choose one of the three options:
   - **Upload Image**: Detect fruit ripeness from an image.
@@ -104,16 +128,19 @@ project/
   - **Real-Time Webcam**: Use your webcam for live detection.
 
 ### **Upload Image**
+
 1. Navigate to `/upload_image`.
 2. Upload an image file (supported formats: `.png`, `.jpg`, `.jpeg`, `.gif`).
 3. View the processed image with detections.
 
 ### **Upload Video**
+
 1. Navigate to `/upload_video`.
 2. Upload a video file (supported format: `.mp4`).
 3. View the processed video with detections.
 
 ### **Real-Time Webcam**
+
 1. Navigate to `/video_feed`.
 2. Allow access to your webcam.
 3. View live detections in real-time.
@@ -121,18 +148,21 @@ project/
 ---
 
 ## **API Endpoints**
-| Endpoint          | Method | Description                                   |
-|--------------------|--------|-----------------------------------------------|
-| `/`                | GET    | Home page with detection options              |
-| `/upload_image`    | POST   | Upload and process an image                   |
-| `/upload_video`    | POST   | Upload and process a video                    |
-| `/video_feed`      | GET    | Stream live webcam feed with detections       |
-| `/uploads/<filename>` | GET | Serve uploaded files (e.g., images/videos)    |
+
+| Endpoint              | Method | Description                                |
+| --------------------- | ------ | ------------------------------------------ |
+| `/`                   | GET    | Home page with detection options           |
+| `/upload_image`       | POST   | Upload and process an image                |
+| `/upload_video`       | POST   | Upload and process a video                 |
+| `/video_feed`         | GET    | Stream live webcam feed with detections    |
+| `/uploads/<filename>` | GET    | Serve uploaded files (e.g., images/videos) |
 
 ---
 
 ## **Contributing**
+
 We welcome contributions to improve this project! To contribute:
+
 1. Fork the repository.
 2. Create a new branch (`git checkout -b feature/YourFeatureName`).
 3. Commit your changes (`git commit -m "Add some feature"`).
@@ -142,14 +172,15 @@ We welcome contributions to improve this project! To contribute:
 ---
 
 ## **Acknowledgments**
+
 - Thanks to the [Ultralytics YOLOv5](https://github.com/ultralytics/yolov5) team for their amazing work on the YOLOv5 model.
 - Inspired by real-world applications of computer vision in agriculture.
 
 ---
 
 ## **Contact**
+
 For questions or feedback, feel free to reach out:
+
 - Email: anteshkumarm3@gmail.com
 - GitHub: [smokinthunder](https://github.com/smokinthunder/)
-
-

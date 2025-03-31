@@ -18,7 +18,7 @@ try:
         source="local"
     )
     model.eval()
-    model.conf = 0.4  # Lower confidence threshold for more detections
+    model.conf = 0.7  # Lower confidence threshold for more detections
     model.iou = 0.45
 except Exception as e:
     print(f"Error loading model: {e}")
